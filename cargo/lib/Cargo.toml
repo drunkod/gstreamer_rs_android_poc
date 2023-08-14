@@ -1,0 +1,30 @@
+[package]
+name = "greetings"
+version = "0.1.0"
+authors = ["Fernando Jiménez Moreno <ferjmoreno@gmail.com>"]
+
+
+[lib]
+crate-type = ["cdylib"]
+
+[target.'cfg(target_os="android")'.dependencies]
+jni = { version = "0.5", default-features = false }
+gst = { version = "0.20.5", package = "gstreamer", default-features = false }
+log = { version = "0.4.18", default-features = false }
+
+
+[package.metadata.android]
+# Name of your APK as shown in the app drawer and in the app switcher
+apk_label = "Hip Startup"
+
+build_targets = [ "aarch64-linux-android" ]
+
+# The target Android API level.
+target_sdk_version = 30
+min_sdk_version = 21
+ 
+# See: https://developer.android.com/guide/topics/manifest/activity-element#screen
+orientation = "portrait"
+
+runtime_libs = "/home/alex/Документы/android/media/examples/android/libgstreamer_android_gen/out/Gstreamer-1.22.5/lib"
+
