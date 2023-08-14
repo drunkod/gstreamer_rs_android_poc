@@ -5,6 +5,7 @@ use std::{env, process};
 use gst::{prelude::*};
 use log::{debug};
 //add RUSTFLAGS="-lffi" with error dlopen failed: cannot locate symbol "ffi_type_void" referenced by
+//https://users.rust-lang.org/t/how-can-i-solve-unable-to-load-native-library-dlopen-failed-cannot-locate-symbol-ffi-type-void-referenced-by/96159
 
 use std::os::raw::c_char;
 use std::ffi::CString;
